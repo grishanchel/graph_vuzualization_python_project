@@ -1,6 +1,6 @@
 import queue
-from Line import Line
-from Node import Node
+from src.line import Line
+from src.node import Node
 
 class Graph:
     def __init__(self, canvas, file_name='graph_information'):

@@ -1,5 +1,5 @@
 from tkinter import Tk, Canvas
-import Graph
+from src.graph import Graph
 
 tk = Tk()
 print(chr(27) + "[2J")
@@ -8,7 +8,7 @@ tk.geometry('1000x500')
 
 cv = Canvas(tk, width=1300, height=700, bg="white")
 cv.pack()
-graph = Graph.Graph(cv)
+graph = Graph(cv)
 
 tk.bind("<Double-Button-1>", lambda event: graph.node_creation(event))
 tk.bind("<Button-1>", lambda event: graph.node_selection(event))

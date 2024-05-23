@@ -1,5 +1,6 @@
 import queue
-import Line, Node
+from Line import Line
+from Node import Node
 
 class Graph:
     def __init__(self, canvas, file_name='graph_information'):
@@ -16,7 +17,7 @@ class Graph:
     def node_creation(self, event):
         self.adjacency_list.append([])
         self.counter += 1
-        self.node_array += [Node.Node(self.canvas, event.x, event.y)]
+        self.node_array += [Node(self.canvas, event.x, event.y)]
 
     def node_selection(self, event):
         x = event.x
@@ -32,7 +33,7 @@ class Graph:
             self.line_creation()
 
     def line_creation(self):
-        self.line_array += [Line.Line(self.canvas, self.queue[0].x, self.queue[0].y, self.queue[1].x, self.queue[1].y)]
+        self.line_array += [Line(self.canvas, self.queue[0].x, self.queue[0].y, self.queue[1].x, self.queue[1].y)]
         self.canvas.itemconfig(self.queue[0].id, fill=self.queue[0].fill, outline=self.queue[0].outline)
         self.canvas.itemconfig(self.queue[1].id, fill=self.queue[1].fill, outline=self.queue[1].outline)
         self.queue = []

@@ -1,7 +1,6 @@
-from main import graph
-
 class Node:
     def __init__(self, canvas, x, y, radius=30):
+        from main import graph
         self.fill = 'yellow'
         self.outline = 'grey'
         self.chosen_colour = 'lime'
